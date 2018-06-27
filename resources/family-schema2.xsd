@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/family-schema2" xmlns:tns="http://www.example.org/family-schema2" elementFormDefault="qualified">
+	
+	<xs:element name="families" type="tns:families_type"/>
+	<xs:complexType name="families_type">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="family" type="tns:family_type"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="family_type">
+		<xs:sequence>
+			<xs:element name="mother" type="tns:mother_type"/>
+			<xs:element name="father" type="tns:father_type"/>
+			<xs:element name="children" type="tns:children_type"/>
+		</xs:sequence>
+		<xs:attribute name="id" use="required"></xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="person_type">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="surname" type="xs:string"/>
+			<xs:element name="age" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="mother_type">
+		<xs:complexContent>
+			<xs:extension base="tns:person_type">
+				<xs:attribute name="maiden-name" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="father_type">
+		<xs:complexContent>
+			<xs:extension base="tns:person_type">
+				<xs:sequence>
+					<xs:element name="military" minOccurs="0" maxOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	
+	<xs:complexType name="children_type">
+		<xs:sequence  minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="child" type="tns:child_type"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+		<xs:complexType name="child_type">
+		<xs:complexContent>
+			<xs:extension base="tns:person_type">
+				<xs:sequence>
+					<xs:element name="gender">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="female"/>
+								<xs:enumeration value="male"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+</xs:schema>

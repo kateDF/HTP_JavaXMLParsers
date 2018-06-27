@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<families xmlns="http://www.example.org/family-schema2" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.example.org/family-schema2 family-schema2.xsd">
+
+	<family id="1">
+		<mother maiden-name="Ivanova">
+			<name>Kate</name>
+			<surname>Petrova</surname>
+			<age>39</age>
+		</mother>
+		<father>
+			<name>Igor</name>
+			<surname>Petrov</surname>
+			<age>35</age>
+			<military /> 
+		</father>
+		<children>
+			<child>
+				<name>Eva</name>
+				<surname>Petrova</surname>
+				<age>5</age>
+				<gender>female</gender>
+			</child>
+			<child>
+				<name>Mark</name>
+				<surname>Petrov</surname>
+				<age>3</age>
+				<gender>male</gender>
+			</child>
+		</children>
+	</family>
+
+	<family id="2">
+		<mother maiden-name="Metlitskaya">
+			<name>Anna</name>
+			<surname>Levina</surname>
+			<age>25</age>
+		</mother>
+		<father>
+			<name>Denis</name>
+			<surname>Levin</surname>
+			<age>26</age>
+			<military />
+		</father>
+		<children>
+			<child>
+				<name>Mari</name>
+				<surname>Levina</surname>
+				<age>1</age>
+				<gender>female</gender>
+			</child>
+		</children>
+	</family>
+
+	<family id="3">
+		<mother maiden-name="Veresaeva">
+			<name>Dana</name>
+			<surname>Melanova</surname>
+			<age>28</age>
+		</mother>
+		<father>
+			<name>Alex</name>
+			<surname>Melanov</surname>
+			<age>30</age>
+		</father>
+		<children>
+			<child>
+				<name>Pavel</name>
+				<surname>Melanov</surname>
+				<age>8</age>
+				<gender>male</gender>
+			</child>
+			<child>
+				<name>Dmitry</name>
+				<surname>Melanov</surname>
+				<age>6</age>
+				<gender>male</gender>
+			</child>
+			<child>
+				<name>Maxim</name>
+				<surname>Melanov</surname>
+				<age>2</age>
+				<gender>male</gender>
+			</child>
+		</children>
+	</family>
+
+</families>
+
+
+

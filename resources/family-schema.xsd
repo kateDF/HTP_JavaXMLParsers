@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/family-schema"
+	xmlns:tns="http://www.example.org/family-schema"
+	elementFormDefault="qualified">
+
+	<element name="families">
+		<complexType>
+			<sequence maxOccurs="unbounded">
+				<element name="family">
+					<complexType>
+						<sequence>
+							<element name="mother">
+								<complexType>
+									<sequence>
+										<element name="name" type="string" />
+										<element name="surname" type="string" />
+										<element name="age" type="int" />
+									</sequence>
+									<attribute name="maiden-name" use="required"></attribute>
+								</complexType>
+							</element>
+							<element name="father">
+								<complexType>
+									<sequence>
+										<element name="name" type="string" />
+										<element name="surname" type="string" />
+										<element name="age" type="int" />
+										<element name="military" minOccurs="0" maxOccurs="1" />
+									</sequence>
+								</complexType>
+							</element>
+							<element name="children">
+								<complexType>
+									<sequence minOccurs="0" maxOccurs="unbounded">
+										<element name="child">
+											<complexType>
+												<sequence>
+													<element name="name" type="string" />
+													<element name="surname" type="string" />
+													<element name="age" type="int" />
+													<element name="gender">
+														<simpleType>
+															<restriction base="string">
+																<enumeration value="female" />
+																<enumeration value="male" />
+															</restriction>
+														</simpleType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+						<attribute name="id" use="required"></attribute>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
